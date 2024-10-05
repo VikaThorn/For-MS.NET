@@ -22,3 +22,5 @@
 ### 7. Удаление записи (DELETE)
 * Работник (admin) может удалять существующие записи.
 ## Проектная база
+![image](https://github.com/user-attachments/assets/d6abdbfe-dd43-4910-9925-e56f35f1d082)
+
