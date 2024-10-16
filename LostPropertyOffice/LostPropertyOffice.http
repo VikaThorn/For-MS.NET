@@ -1,0 +1,6 @@
+@LostPropertyOffice_HostAddress = http://localhost:5087
+
+GET {{LostPropertyOffice_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
