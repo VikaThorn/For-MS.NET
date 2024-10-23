@@ -1,7 +1,7 @@
 using LostPropertyOffice.DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace LostPropertyOffice.DataAccess
+namespace LostPropertyOffice.Repository
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {

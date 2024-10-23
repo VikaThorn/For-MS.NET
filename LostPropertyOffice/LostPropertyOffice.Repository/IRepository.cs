@@ -1,6 +1,6 @@
 using LostPropertyOffice.DataAccess.Entities;
 
-namespace LostPropertyOffice.DataAccess
+namespace LostPropertyOffice.Repository
 {
     public interface IRepository<T> where T : BaseEntity
     {
