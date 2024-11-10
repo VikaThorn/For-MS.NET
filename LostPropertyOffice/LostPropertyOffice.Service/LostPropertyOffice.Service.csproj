@@ -23,6 +23,7 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\LostPropertyOffice.BL\LostPropertyOffice.BL.csproj" />
+        <ProjectReference Include="..\LostPropertyOffice.DataAccess\LostPropertyOffice.DataAccess.csproj" />
     </ItemGroup>
     <ItemGroup>
         <Compile Remove="logs\**" />

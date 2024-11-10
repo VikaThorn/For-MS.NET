@@ -1,6 +1,7 @@
 using LostPropertyOffice.DataAccess;
 using LostPropertyOffice.Service.Settings;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection; 
 
 namespace LostPropertyOffice.Service.IoC
 {

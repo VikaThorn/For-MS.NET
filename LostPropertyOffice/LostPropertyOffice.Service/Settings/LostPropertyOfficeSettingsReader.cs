@@ -6,6 +6,8 @@ namespace LostPropertyOffice.Service.Settings
         {
             return new LostPropertyOfficeSettings()
             {
+                ServiceUri = configuration.GetValue<Uri>("Uri"),
+                
                 LostPropertyOfficeDbContextConnectionString = configuration.GetValue<string>("LostPropertyOfficeDbContext")
             };
         }
