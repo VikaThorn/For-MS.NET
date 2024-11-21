@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace LostPropertyOffice.Service.IoC
 {
-    public static class DbContextConfigurator
+    public static class DbContextConfigurator // Вроде только один добавляется
     {
         public static void ConfigureService(IServiceCollection services, LostPropertyOfficeSettings settings)
         {
