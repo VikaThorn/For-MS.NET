@@ -1,12 +1,10 @@
+using AutoMapper;
+using LostPropertyOffice.BL.Auth;
 using LostPropertyOffice.DataAccess;
 using LostPropertyOffice.DataAccess.Entities;
-using LostPropertyOffice.BL.Users.Provider;
-using LostPropertyOffice.BL.Users.Manager;
-using LostPropertyOffice.Repository;
+using LostPropertyOffice.Repository; // Убедимся, что это пространство имен используется
 using LostPropertyOffice.Service.Settings;
-using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity;
 
 namespace LostPropertyOffice.Service.IoC
 {
@@ -14,13 +12,16 @@ namespace LostPropertyOffice.Service.IoC
     {
         public static void ConfigureServices(IServiceCollection services, LostPropertyOfficeSettings settings)
         {
-            services.AddDbContext<LostPropertyOfficeDbContext>(options =>
-                options.UseNpgsql(settings.LostPropertyOfficeDbContextConnectionString));
-
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped<IRepository<UserEntity>, Repository<UserEntity>>();
-            services.AddScoped<IUsersProvider, UsersProvider>();
-            services.AddScoped<IUsersManager, UsersManager>();
+            services.AddScoped<IAuthProvider>(x =>
+                new AuthProvider(
+                    x.GetRequiredService<SignInManager<UserEntity>>(),
+                    x.GetRequiredService<UserManager<UserEntity>>(),
+                    x.GetRequiredService<IHttpClientFactory>(),
+                    settings.IdentityServerUri,
+                    settings.ClientId,
+                    settings.ClientSecret,
+                    x.GetRequiredService<IMapper>())); 
         }
     }
 }

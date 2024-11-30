@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace LostPropertyOffice.DataAccess.Entities
 {
     [Table("lost_items")]
-    public class LostItemEntity : BaseEntity // Эти сущности имелись в виду, что их не хватало?
+    public class LostItemEntity : BaseEntity
     {
         public string Name { get; set; }
         public int ItemTypeId { get; set; }
